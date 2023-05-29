@@ -19,7 +19,10 @@ jobs:
           port: 22
           script: |
             cd ~/apps/ci-cd-nodejs
+            echo "pull"
             git pull origin main
             git status
+            echo "instalprod"
             npm install --only=prod
+            echo "pm2"
             pm2 restart YoutubeApp
