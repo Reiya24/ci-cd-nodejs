@@ -23,6 +23,9 @@ jobs:
             git pull origin main
             git status
             echo "instalprod"
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm --help
             npm install --only=prod
             echo "pm2"
             pm2 restart YoutubeApp
