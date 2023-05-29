@@ -18,14 +18,10 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
+            exec bash \-l
             cd ~/apps/ci-cd-nodejs
             echo "pull"
             git pull origin main
             git status
-            echo "instalprod"
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh 
-            npm --help
             npm install --only=prod
-            echo "pm2"
             pm2 restart YoutubeApp
