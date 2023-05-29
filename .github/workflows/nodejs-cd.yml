@@ -23,7 +23,6 @@ jobs:
             git pull origin main
             git status
             echo "instalprod"
-#            harus ada kalo tidak nanti eror
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh 
             npm --help
